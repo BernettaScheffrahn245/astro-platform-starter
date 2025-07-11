@@ -1,21 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
+// 逻辑部分（可在此处获取数据或定义变量）
+const pageTitle = "欢迎来到阿马尔菲海岸";
+const destinations = [
+  {
+    name: "波西塔诺",
+    description: "悬崖上的彩色小镇...",
+    image: "/images/positano.jpg"
+  },
+  // 其他目的地...
+];
 ---
+<!-- HTML 模板部分 -->
+<html lang="zh">
+<head>
+  <title>{pageTitle}</title>
+  <style>
+    /* 内联样式 */
+    body { font-family: 'Arial', sans-serif; }
+    .hero { background: #f0f8ff; padding: 2rem; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>{pageTitle}</h1>
+      <p>探索意大利最梦幻的海岸线</p>
+    </section>
 
-<Layout title="Welcome to Astro.">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
-</Layout>
+    <!-- 动态生成内容 -->
+    {destinations.map(item => (
+      <article>
+        <h2>{item.name}</h2>
+        <p>{item.description}</p>
+        <img src={item.image} alt={item.name} width="800" height="450" />
+      </article>
+    ))}
+  </main>
+</body>
+</html>
